@@ -1,0 +1,38 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/monorepo-repro-build/src",
+  "monorepo": true,
+  "root": "apps/monorepo-repro-build",
+  "compilerOptions": {
+    "tsConfigPath": "apps/monorepo-repro-build/tsconfig.app.json"
+  },
+  "projects": {
+    "monorepo-repro-build": {
+      "type": "application",
+      "root": "apps/monorepo-repro-build",
+      "entryFile": "main",
+      "sourceRoot": "apps/monorepo-repro-build/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/monorepo-repro-build/tsconfig.app.json"
+      }
+    },
+    "new-one": {
+      "type": "application",
+      "root": "apps/new-one",
+      "entryFile": "main",
+      "sourceRoot": "apps/new-one/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/new-one/tsconfig.app.json"
+      }
+    },
+    "my-lib": {
+      "type": "library",
+      "root": "libs/my-lib",
+      "entryFile": "index",
+      "sourceRoot": "libs/my-lib/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/my-lib/tsconfig.lib.json"
+      }
+    }
+  }
+}
