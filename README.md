@@ -13,12 +13,15 @@ yarn nest generate lib my-lib
 2. update nest-cli.json:
    1. `webpack: false`
 3. update tsconfig.json to have `@apps/` path
-4. run `yarn build-all`
-5. run `yarn start:dev new-one` <-- runs correctly
-6. run `yarn start:prod` <-- only runs monorepo-repro-build
-7. update `new-one/src/main.ts` to include file from monorepo-repro-build
-   1. code currently commented out in this repo. Uncomment to see issue
-8. run `yarn build-all` again
+5. run `yarn rimraf dist && yarn start:dev new-one` <-- runs correctly
+6. run `yarn rimraf dist && yarn build-all && yarn start:prod` <-- only runs monorepo-repro-build
+7. run `APP=new-one yarn start:prod` <-- success
+8. update `new-one/src/main.ts` to include file from monorepo-repro-build
+   1. code currently commented out in this repo. Uncomment it
+9. run `yarn build-all` again to see build structure changes
+10. run `yarn rimraf dist && yarn build-all && yarn start:prod` <-- success
+11. run `APP=new-one yarn start:prod` <-- entry point not found
+12. run `yarn start:dev new-one` <-- this is broken now also without a cleanup of `dist`
   
 Questions:
 
