@@ -13,11 +13,12 @@ yarn nest generate lib my-lib
 2. update nest-cli.json:
    1. `webpack: false`
 3. update tsconfig.json to have `@apps/` path
-4. run `yarn build`
+4. run `yarn build-all`
 5. run `yarn start:dev new-one` <-- runs correctly
 6. run `yarn start:prod` <-- only runs monorepo-repro-build
 7. update `new-one/src/main.ts` to include file from monorepo-repro-build
    1. code currently commented out in this repo. Uncomment to see issue
+8. run `yarn build-all` again
   
 Questions:
 
